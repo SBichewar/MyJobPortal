@@ -1,0 +1,121 @@
+﻿@model Common.City
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/NoramlLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="../js/jquery.min.js"></script>
+<link href="../css/Taluka.css" rel="stylesheet" />
+<link href="~/css/Taluka.css" rel="stylesheet" />
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#Country').change(function () {
+            var p_id = $('#Country').val();
+            if (p_id != null && p_id != '') {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:53763/Dist/GetStateByContryId",
+                    data: { CountryId: p_id },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        if (data != null) {
+                            var p_Upcomingobj = JSON.parse(data);
+                            var state = "<select id='ddlState'>";
+                            state = state + '<option value="">--Select--</option>';
+                            for (i in p_Upcomingobj) {
+                                state = state + '<option value=' + p_Upcomingobj[i].StateId + '>' + p_Upcomingobj[i].StateName + '</option>';
+                            }
+                            state = state + '</select>';
+                            $('#ddlState').html(state);
+                        }
+                    }
+                });
+            }
+        });
+
+        //dist
+
+        $('#ddlState').change(function () {
+            var p_id = $('#ddlState').val();
+            if (p_id != null && p_id != '') {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:53763/City/GetStateByContryId",
+                    data: { StateId: p_id },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        if (data != null) {
+                            var p_Upcomingobj = JSON.parse(data);
+                            var district = "<select id='ddlDist'>";
+                            district = district + '<option value="">--Select--</option>';
+                            for (i in p_Upcomingobj) {
+                                district = district + '<option value=' + p_Upcomingobj[i].DistId + '>' + p_Upcomingobj[i].DistName + '</option>';
+                            }
+                            district = district + '</select>';
+                            $('#ddlDist').html(district);
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.Label("Select Country")
+                   @* @Html.DropDownList("Country", ViewBag.Country as IEnumerable<SelectListItem>, "Select", new { htmlAttributes = new { @class = "form-control ListWidth" }, @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })*@
+                    @Html.DropDownListFor(x => x.CountryId, ViewBag.Country as IEnumerable<SelectListItem>, "--Select--", new { @id = "Country", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.Label("Select State", new { htmlAttributes = new { @class = "form-control ListWidth" } })
+                    @Html.DropDownListFor(x => x.StateId, new List<SelectListItem>(), "--Select--", new { @id = "ddlState", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                    @*@Html.DropDownList("ddlState", new List<SelectListItem>(), "--Select--", new { htmlAttributes = new { @class = "form-control" }, @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.Label("District Name", new { htmlAttributes = new { @class = "form-control" } })
+               
+                    @Html.DropDownListFor(x => x.DistId, new List<SelectListItem>(), "--Select--", new { @id = "ddlDist", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                    @Html.ValidationMessageFor(model => model.DistId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.LabelFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="submit" value="Create" class="btn btn-success "/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

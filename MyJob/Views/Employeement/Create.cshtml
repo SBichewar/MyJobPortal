@@ -1,0 +1,160 @@
+﻿@model Common.Employement
+@{
+    Layout = "~/Views/Shared/NoramlLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyJob- New and best job portal</title>
+    <!-- css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/css/style.css" rel="stylesheet" />*@
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.validate.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.js"></script>
+    <!-- Add this link in your page  -->
+
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:53763/Employeement/GetDistList",
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    if (data != null) {
+                        var p_Upcomingobj = JSON.parse(data);
+                        var district = '<option>Select Location</option>';
+                        for (i in p_Upcomingobj) {
+                            district = district + '<option value=' + p_Upcomingobj[i].DistId + '>' + p_Upcomingobj[i].DistName + '</option>';
+                        }
+
+                        $('#LocationDisrictId').html(district);
+                    }
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <h4>Empolyeement</h4>
+                                <hr class="colorgraph" />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control input-md", placeholder = "Current designation" } })
+                                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control input-md", placeholder = "Current Company" } })
+                                    @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        @Html.DropDownListFor(x => x.SaleryIn, new List<SelectListItem>
+                                         {
+                                            new SelectListItem{ Text="Lakh", Value = "0" },
+                                            new SelectListItem{ Text="Doller", Value = "1" },
+
+                                         }, new { @id = "SaleryIn", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+
+                                        @Html.ValidationMessageFor(model => model.SaleryIn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(x => x.AnualSaleryInLakh, ViewBag.AnualSalery as IEnumerable<SelectListItem>, "Select AnualSaleryInLakh", new { @id = "AnualSaleryInLakh", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                                            @Html.ValidationMessageFor(model => model.AnualSaleryInLakh, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(x => x.AnualSaleryInThousent, ViewBag.AnualSaleryInThouset as IEnumerable<SelectListItem>, "Select AnualSaleryInThousent", new { @id = "AnualSaleryInThousent", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                                            @Html.ValidationMessageFor(model => model.AnualSaleryInThousent, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(x => x.StartYear, ViewBag.Year as IEnumerable<SelectListItem>, "Working Seance Year", new { @id = "StartYear", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                                            @Html.ValidationMessageFor(model => model.StartYear, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(x => x.StartMonth, new List<SelectListItem>
+                                         {
+                                            new SelectListItem{ Text="Working Seance Month"},
+                                            new SelectListItem{ Text="January", Value = "1" },
+                                            new SelectListItem{ Text="February", Value = "2" },
+                                            new SelectListItem{ Text="March", Value = "3" },
+                                            new SelectListItem{ Text="April", Value = "4" },
+                                            new SelectListItem{ Text="May", Value = "5" },
+                                            new SelectListItem{ Text="June", Value = "6" },
+                                            new SelectListItem{ Text="July", Value = "7" },
+                                            new SelectListItem{ Text="Augast", Value = "8" },
+                                            new SelectListItem{ Text="September", Value = "9" },
+                                            new SelectListItem{ Text="Octomer", Value = "10" },
+                                            new SelectListItem{ Text="November", Value = "11" },
+                                            new SelectListItem{ Text="December", Value = "12" }
+                                         }, new { @id = "StartMonth", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+
+                                            @Html.ValidationMessageFor(model => model.StartMonth, "", new { @class = "text-danger" })
+                                        </div>
+                                <div class="form-group">
+                                    @Html.DropDownListFor(x => x.NoticePeriod, new List<SelectListItem>
+                                         {
+                                             new SelectListItem{ Text="Select notice period" },
+                                            new SelectListItem{ Text="Less Than 15 Days", Value = "Less Than 15 Days" },
+                                            new SelectListItem{ Text="Less Than 1 Month", Value = "Less Than 1 Month" },
+                                            new SelectListItem{ Text="1 Month", Value = "1 Month" },
+                                            new SelectListItem{ Text="45 Days", Value = "45 Days" },
+                                            new SelectListItem{ Text="2 Month", Value = "2 Month" },
+                                            new SelectListItem{ Text="3 Month", Value = "3 Month" },
+                                            new SelectListItem{ Text="More Than 3 Month", Value = "More Than 3 Month" },
+                                         }, new { @id = "NoticePeriod", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+
+                                    @Html.ValidationMessageFor(model => model.NoticePeriod, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.DropDownListFor(x => x.LocationDisrictId, new List<SelectListItem>(), "Select Location", new { @id = "LocationDisrictId", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                                    @Html.ValidationMessageFor(model => model.LocationDisrictId, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.SkillSet, new { htmlAttributes = new { @class = "form-control input-md", placeholder = "Enter Skill set" } })
+                                    @Html.ValidationMessageFor(model => model.SkillSet, "", new { @class = "text-danger" })
+
+                                </div>
+
+
+                                <hr class="colorgraph">
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+@{Html.EnableClientValidation(true);}
+@{Html.EnableUnobtrusiveJavaScript(true);}

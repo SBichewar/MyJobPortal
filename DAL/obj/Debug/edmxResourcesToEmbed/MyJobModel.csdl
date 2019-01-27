@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyJobPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminMst">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CompanyMst">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPersion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Uname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Dist">
+    <Key>
+      <PropertyRef Name="DistId" />
+    </Key>
+    <Property Name="DistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostJobMst">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cid" Type="Int32" />
+    <Property Name="JobCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RequireSkill" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ExprienceRequire" Type="Int32" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="PostDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SekerMst">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnrollNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Dob" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="Resume" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Taluka">
+    <Key>
+      <PropertyRef Name="TalukaId" />
+    </Key>
+    <Property Name="TalukaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TalukaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DistId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblAddress">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="AddressType" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblCity">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DistId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblCompany">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CotactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsetName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyWebsite" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IndustryTypeId" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblCompanyMessageRecived">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="MessageDate" Type="DateTime" Precision="3" />
+    <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="IsApplyed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblCompanyMessageSend">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblCountry">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblDist">
+    <Key>
+      <PropertyRef Name="DistId" />
+    </Key>
+    <Property Name="DistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblEndustry">
+    <Key>
+      <PropertyRef Name="EndustryId" />
+    </Key>
+    <Property Name="EndustryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EndustryName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblImage">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImagePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblJobApplication">
+    <Key>
+      <PropertyRef Name="JobApplicationId" />
+    </Key>
+    <Property Name="JobApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobPostId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblJobPost">
+    <Key>
+      <PropertyRef Name="JobPostId" />
+    </Key>
+    <Property Name="JobPostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="JobCategory" Type="Int32" />
+    <Property Name="JobPosition" Type="Int32" />
+    <Property Name="JobDisctiption" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NoticePerionInDays" Type="Int32" />
+    <Property Name="NoticePeriodInMonth" Type="Int32" />
+    <Property Name="SaleryRs" Type="Int32" />
+    <Property Name="SaleryDoller" Type="Int32" />
+    <Property Name="Exprience" Type="Int32" />
+    <Property Name="PostionOpen" Type="Int32" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblJobSaved">
+    <Key>
+      <PropertyRef Name="JobSaveId" />
+    </Key>
+    <Property Name="JobSaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobPostId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblPosition">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblProfileViewed">
+    <Key>
+      <PropertyRef Name="ProfileViewdId" />
+    </Key>
+    <Property Name="ProfileViewdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ViewedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TblState">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblUserMessageRecived">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="MessageDate" Type="DateTime" Precision="3" />
+    <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="IsApplyed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblUserMessageSend">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="PostId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeId" />
+    </Key>
+    <Property Name="UserTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MyJobPortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminMsts" EntityType="Self.AdminMst" />
+    <EntitySet Name="CompanyMsts" EntityType="Self.CompanyMst" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Dists" EntityType="Self.Dist" />
+    <EntitySet Name="PostJobMsts" EntityType="Self.PostJobMst" />
+    <EntitySet Name="SekerMsts" EntityType="Self.SekerMst" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="Talukas" EntityType="Self.Taluka" />
+    <EntitySet Name="TblAddresses" EntityType="Self.TblAddress" />
+    <EntitySet Name="TblCities" EntityType="Self.TblCity" />
+    <EntitySet Name="TblCompanies" EntityType="Self.TblCompany" />
+    <EntitySet Name="TblCompanyMessageReciveds" EntityType="Self.TblCompanyMessageRecived" />
+    <EntitySet Name="TblCompanyMessageSends" EntityType="Self.TblCompanyMessageSend" />
+    <EntitySet Name="TblCountries" EntityType="Self.TblCountry" />
+    <EntitySet Name="TblDists" EntityType="Self.TblDist" />
+    <EntitySet Name="TblEndustries" EntityType="Self.TblEndustry" />
+    <EntitySet Name="TblImages" EntityType="Self.TblImage" />
+    <EntitySet Name="TblJobApplications" EntityType="Self.TblJobApplication" />
+    <EntitySet Name="TblJobPosts" EntityType="Self.TblJobPost" />
+    <EntitySet Name="TblJobSaveds" EntityType="Self.TblJobSaved" />
+    <EntitySet Name="TblPositions" EntityType="Self.TblPosition" />
+    <EntitySet Name="TblProfileVieweds" EntityType="Self.TblProfileViewed" />
+    <EntitySet Name="TblStates" EntityType="Self.TblState" />
+    <EntitySet Name="TblUserMessageReciveds" EntityType="Self.TblUserMessageRecived" />
+    <EntitySet Name="TblUserMessageSends" EntityType="Self.TblUserMessageSend" />
+    <EntitySet Name="TblUserTypes" EntityType="Self.TblUserType" />
+    <EntitySet Name="EdgucationMsts" EntityType="MyJobPortalModel.EdgucationMst" />
+    <EntitySet Name="TblDepartments" EntityType="MyJobPortalModel.TblDepartment" />
+    <EntitySet Name="TblHighestQualifications" EntityType="MyJobPortalModel.TblHighestQualification" />
+    <EntitySet Name="TblEducationTypes" EntityType="MyJobPortalModel.TblEducationType" />
+    <EntitySet Name="TblEducations" EntityType="MyJobPortalModel.TblEducation" />
+    <EntitySet Name="TblYears" EntityType="MyJobPortalModel.TblYear" />
+    <EntitySet Name="TblAnualInLakhSaleries" EntityType="MyJobPortalModel.TblAnualInLakhSalery" />
+    <EntitySet Name="TblAnualSaleryInThousents" EntityType="MyJobPortalModel.TblAnualSaleryInThousent" />
+    <EntitySet Name="TblExpreances" EntityType="MyJobPortalModel.TblExpreance" />
+    <EntitySet Name="TblEmployements" EntityType="MyJobPortalModel.TblEmployement" />
+    <EntitySet Name="TblUsers" EntityType="MyJobPortalModel.TblUser" />
+    <EntitySet Name="TblSkillSets" EntityType="MyJobPortalModel.TblSkillSet" />
+    <EntitySet Name="TblProfileSummeries" EntityType="MyJobPortalModel.TblProfileSummery" />
+    <EntitySet Name="TblResumes" EntityType="MyJobPortalModel.TblResume" />
+    <EntitySet Name="TblProjects" EntityType="MyJobPortalModel.TblProject" />
+  </EntityContainer>
+  <EntityType Name="EdgucationMst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sid" Type="Int32" />
+    <Property Name="CollageName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Enrollno" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Semester" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Edgucation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passyear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CPI" Type="Double" />
+    <Property Name="CGPA" Type="Double" />
+    <Property Name="Skill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TblDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="IndustryId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblHighestQualification">
+    <Key>
+      <PropertyRef Name="QualificationId" />
+    </Key>
+    <Property Name="QualificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QualificationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblEducationType">
+    <Key>
+      <PropertyRef Name="EducationTypeId" />
+    </Key>
+    <Property Name="EducationTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EducationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblEducation">
+    <Key>
+      <PropertyRef Name="EdgucationId" />
+    </Key>
+    <Property Name="EdgucationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="EducationType" Type="Int32" />
+    <Property Name="StartMonth" Type="Int32" />
+    <Property Name="StartYear" Type="Int32" />
+    <Property Name="CollageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="QualificationId" Type="Int32" />
+    <Property Name="SkillSetId" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="PassingMonth" Type="Int32" />
+    <Property Name="PassingYear" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblYear">
+    <Key>
+      <PropertyRef Name="YearId" />
+    </Key>
+    <Property Name="YearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblAnualInLakhSalery">
+    <Key>
+      <PropertyRef Name="AnualSaleryId" />
+    </Key>
+    <Property Name="AnualSaleryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnualSalery" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblAnualSaleryInThousent">
+    <Key>
+      <PropertyRef Name="AnualSaleryInThousentId" />
+    </Key>
+    <Property Name="AnualSaleryInThousentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnualSaleryInThouset" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblExpreance">
+    <Key>
+      <PropertyRef Name="ExprenceId" />
+    </Key>
+    <Property Name="ExprenceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExpreanceInMonth" Type="Int32" />
+    <Property Name="ExpreanceInYear" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblEmployement">
+    <Key>
+      <PropertyRef Name="EmployementId" />
+    </Key>
+    <Property Name="EmployementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IscurrentCompany" Type="Boolean" />
+    <Property Name="SkillSetId" Type="Int32" />
+    <Property Name="CompanyName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LocationDisrictId" Type="Int32" />
+    <Property Name="StartMonth" Type="Int32" />
+    <Property Name="StartYear" Type="Int32" />
+    <Property Name="NoticePeriod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="EndMonth" Type="Int32" />
+    <Property Name="EndYear" Type="Int32" />
+    <Property Name="UearId" Type="Int32" />
+    <Property Name="Designation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AnualSaleryInLakh" Type="Int32" />
+    <Property Name="AnualSaleryInThousent" Type="Int32" />
+    <Property Name="SaleryIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="GenderId" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ProfilePicId" Type="Int32" />
+    <Property Name="ResumeId" Type="Int32" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="UserType" Type="Int32" />
+    <Property Name="MobileNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblSkillSet">
+    <Key>
+      <PropertyRef Name="SkillSetId" />
+    </Key>
+    <Property Name="SkillSetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillSet" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblProfileSummery">
+    <Key>
+      <PropertyRef Name="ProfileSummeryId" />
+    </Key>
+    <Property Name="ProfileSummeryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileSummery" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblResume">
+    <Key>
+      <PropertyRef Name="ResumeId" />
+    </Key>
+    <Property Name="ResumeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResumePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblProject">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectDetails" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="StartMonth" Type="Int32" />
+    <Property Name="StartYear" Type="Int32" />
+    <Property Name="EndMonth" Type="Int32" />
+    <Property Name="EndYear" Type="Int32" />
+    <Property Name="CurrentWorking" Type="Boolean" />
+  </EntityType>
+</Schema>

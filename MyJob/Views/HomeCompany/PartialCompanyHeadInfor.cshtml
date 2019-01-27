@@ -1,0 +1,26 @@
+﻿@{
+    var CompInfo = ViewBag.CompInfo;
+}
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            @*<img src="@UserInfo.ProfilePic" alt="" />
+            <img src="~/img/@CompInfo.ProfilePic" alt="" style="border-radius: 50%; width: 100px;    height: 100px;" />*@
+        </div>
+        <div id="divFullName">@CompInfo.CName   @CompInfo.Address</div>
+    </div>
+    <div class="col-md-4">
+        <ul>
+            <li>@CompInfo.Address</li>
+            <li>@CompInfo.City</li>
+            <li>@CompInfo.State</li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul>
+            <li>@CompInfo.EmailId</li>
+            <li>@CompInfo.EmailId</li>
+            <li></li>
+        </ul>
+    </div>
+</div>

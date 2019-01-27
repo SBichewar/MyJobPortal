@@ -1,0 +1,181 @@
+﻿@{
+    Layout = "~/Views/Shared/NoramlLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MyJob- New and best job portal</title>
+    <!-- css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/css/style.css" rel="stylesheet" />*@
+    <!-- Theme skin -->
+    <link id="t-colors" href="skins/default.css" rel="stylesheet" />
+    <!-- boxed bg -->
+    <link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />
+
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/Taluka.css" rel="stylesheet" />
+    <link href="~/css/Taluka.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#Country').change(function () {
+                var p_id = $('#Country').val();
+                if (p_id != null && p_id != '') {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:53763/Dist/GetStateByContryId",
+                        data: { CountryId: p_id },
+                        datatype: "json",
+                        traditional: true,
+                        success: function (data) {
+                            if (data != null) {
+                                var p_Upcomingobj = JSON.parse(data);
+                                var state = "<select id='ddlState'>";
+                                state = state + '<option value="">Select State</option>';
+                                for (i in p_Upcomingobj) {
+                                    state = state + '<option value=' + p_Upcomingobj[i].StateId + '>' + p_Upcomingobj[i].StateName + '</option>';
+                                }
+                                state = state + '</select>';
+                                $('#ddlState').html(state);
+                            }
+                        }
+                    });
+                }
+            });
+
+            //dist
+
+            $('#ddlState').change(function () {
+                var p_id = $('#ddlState').val();
+                if (p_id != null && p_id != '') {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:53763/City/GetStateByContryId",
+                        data: { StateId: p_id },
+                        datatype: "json",
+                        traditional: true,
+                        success: function (data) {
+                            if (data != null) {
+                                var p_Upcomingobj = JSON.parse(data);
+                                var district = "<select id='ddlDist'>";
+                                district = district + '<option value="">Select Dist</option>';
+                                for (i in p_Upcomingobj) {
+                                    district = district + '<option value=' + p_Upcomingobj[i].DistId + '>' + p_Upcomingobj[i].DistName + '</option>';
+                                }
+                                district = district + '</select>';
+                                $('#ddlDist').html(district);
+                            }
+                        }
+                    });
+                }
+            });
+
+            //City
+
+            $('#ddlDist').change(function () {
+                var p_id = $('#ddlDist').val();
+                if (p_id != null && p_id != '') {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:53763/City/GetCityByDistId",
+                        data: { DistId: p_id },
+                        datatype: "json",
+                        traditional: true,
+                        success: function (data) {
+                            if (data != null) {
+                                var p_Upcomingobj = JSON.parse(data);
+                                var City = "<select id='ddlCity'>";
+                                City = City + '<option value="">Select City</option>';
+                                for (i in p_Upcomingobj) {
+                                    City = City + '<option value=' + p_Upcomingobj[i].CityId + '>' + p_Upcomingobj[i].CityName + '</option>';
+                                }
+                                City = City + '</select>';
+                                $('#ddlCity').html(City);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        @using (Html.BeginForm("Index", "register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            // <form role="form" class="register-form" action="/register/index" method="post" enctype="multipart/form-data">
+                            <h2>Please Sign Up <small>It's free and always will be.</small></h2>
+                                <hr class="colorgraph">
+                                <div class="form-group">
+                                    <input type="text" name="FullName" id="FullName" class="form-control input-lg" placeholder="FullName" tabindex="1">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="GenderId" id="GenderId" class="form-control input-lg" placeholder="Gender" tabindex="2">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Address" id="Address" class="form-control input-lg" placeholder="Address" tabindex="4">
+                                </div>
+                                <div class="form-group">
+                                    @Html.DropDownList("Country", ViewBag.Country as IEnumerable<SelectListItem>, "Select Country", new { htmlAttributes = new { @class = "form-control ListWidth" }, @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })
+                                    @*@Html.DropDownListFor(x => x.CountryId, ViewBag.Country as IEnumerable<SelectListItem>, "--Select--", new { @id = "Country", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })*@
+
+                                </div>
+                                <div class="form-group">
+                                    @*@Html.DropDownListFor(x => x.StateId, new List<SelectListItem>(), "--Select--", new { @id = "ddlState", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })*@
+                                    @Html.DropDownList("ddlState", new List<SelectListItem>(), "Select State", new { htmlAttributes = new { @class = "form-control" }, @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.DropDownList("ddlDist", new List<SelectListItem>(), "Select District", new { htmlAttributes = new { @class = "form-control" }, @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })
+                                    @*@Html.DropDownListFor(x => x.DistId, new List<SelectListItem>(), "--Select--", new { @id = "ddlDist", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })*@
+                                    @* @Html.ValidationMessageFor(model => model.DistId, "", new { @class = "text-danger" })*@
+
+                                </div>
+                                <div class="form-group">
+                                    <select id="ddlCity" name="CityId" style="width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;"></select>
+                                    @*@Html.DropDownListFor(x => x.CityId, new List<SelectListItem>(), "--Select--", new { @id = "ddlCity", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc; border-radius: 4px;" })
+                        <input type="text" name="CityId" id="CityId" class="form-control input-lg" placeholder="City" tabindex="5">*@
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Pincode" id="Pincode" class="form-control input-lg" placeholder="Pincode" tabindex="4">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="EmailId" id="EmailId" class="form-control input-lg" placeholder="EmailId" tabindex="4">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="Password" id="Password" class="form-control input-lg" placeholder="Password" tabindex="4">
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" name="fileUpload" id="ProfilePic" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="file" name="fileUpload1" id="ResumeId" />
+                                </div>
+
+                                <hr class="colorgraph">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn  btn-success btn-block btn-lg" tabindex="7"></div>
+                                    <div class="col-xs-12 col-md-6">Already have an account? <a href="login.html">Sign In</a></div>
+                                </div>
+
+                        }
+                    </div>
+
+                    </div>
+            </div>
+        </section>
+
+    </div>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+</body>
+</html>

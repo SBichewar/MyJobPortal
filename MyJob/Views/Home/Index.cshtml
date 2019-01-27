@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayOut.cshtml";
+}
+
+<div class="row" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    <div class="col-md-12 ">
+        @{Html.RenderAction("PartialHeadInfor", "Home");}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+        @{Html.RenderAction("PartialProfileSummer", "Home");}
+    </div>
+</div>
+<div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    @{Html.RenderAction("PartialkeySkill", "Home");}
+</div>
+
+<div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    @{Html.RenderAction("PartialEmployment", "Home");}
+</div>
+
+<div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    @{Html.RenderAction("PartialEducation", "Home");}
+</div>
+
+<div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    @{Html.RenderAction("PartialProjects", "Home");}
+</div>
+
+<div class="col-md-12" style="background-color: #ffeb3b0a;box-shadow: 0 1px 1px 0 rgb(44, 58, 1), 0 1px 2px 0 rgb(25, 66, 2), 0 2px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 23px;
+    padding: 22px;">
+    @{Html.RenderAction("ParrialprofileSummery", "Home");}
+</div>
+
+<div class="modal" id="ModalAddProject">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Projects</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetPartialAddProjects", "Home");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddResume">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Resume</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetAddResumePartialView", "Home");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddSkill">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">add skill</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetPartialSkill", "Home");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddEmployeement">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Employement</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetJobPost", "HomeCompany");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddProfileSummery">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Update Profile Summery</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetPartialAddProfileSummery", "Home");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddEducation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Education</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetJobPost", "HomeCompany");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="ModalAddPersonalInfo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Update Personal Information</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @{Html.RenderAction("GetJobPost", "HomeCompany");}
+                @*@Html.RenderPartial(PartialAddJobPost)*@
+
+            </div>
+        </div>
+    </div>
+</div>

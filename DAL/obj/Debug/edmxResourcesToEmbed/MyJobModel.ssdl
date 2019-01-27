@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyJobPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminMst">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="CompanyMst">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pincode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPersion" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="500" />
+    <Property Name="Uname" Type="nvarchar" MaxLength="500" />
+    <Property Name="Website" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="IsEable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Dist">
+    <Key>
+      <PropertyRef Name="DistId" />
+    </Key>
+    <Property Name="DistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistName" Type="nvarchar" MaxLength="200" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EdgucationMst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sid" Type="int" />
+    <Property Name="CollageName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Enrollno" Type="nvarchar" MaxLength="500" />
+    <Property Name="Semester" Type="nvarchar" MaxLength="500" />
+    <Property Name="Edgucation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passyear" Type="varchar" MaxLength="50" />
+    <Property Name="CPI" Type="float" />
+    <Property Name="CGPA" Type="float" />
+    <Property Name="Skill" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtraSkill" Type="nvarchar" MaxLength="50" />
+    <Property Name="Resume" Type="nvarchar(max)" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Empolyeement">
+    <Key>
+      <PropertyRef Name="EmpoyementId" />
+    </Key>
+    <Property Name="EmpoyementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentCompany" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnualSaleryInLakh" Type="int" />
+    <Property Name="AnualSaleryInThousent" Type="int" />
+    <Property Name="WrokingFromYear" Type="int" />
+    <Property Name="WrokingFromMonath" Type="nchar" MaxLength="10" />
+    <Property Name="CompanyNumber" Type="int" />
+    <Property Name="CurrentLocationId" Type="int" />
+    <Property Name="NoticePeriod" Type="int" />
+    <Property Name="NoticePeriodType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SkilId" Type="int" />
+  </EntityType>
+  <EntityType Name="PostJobMst">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cid" Type="int" />
+    <Property Name="JobCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="RequireSkill" Type="nvarchar" MaxLength="500" />
+    <Property Name="ExprienceRequire" Type="int" />
+    <Property Name="IsEnable" Type="bit" />
+    <Property Name="PostDiscription" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="SekerMst">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnrollNo" Type="nvarchar(max)" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" MaxLength="200" />
+    <Property Name="Pincode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Dob" Type="datetime" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Resume" Type="varchar" MaxLength="1000" />
+    <Property Name="ProfilePic" Type="varchar" MaxLength="1000" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="Taluka">
+    <Key>
+      <PropertyRef Name="TalukaId" />
+    </Key>
+    <Property Name="TalukaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TalukaName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DistId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblAddress">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Pincode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="AddressType" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblAnualInLakhSalery">
+    <Key>
+      <PropertyRef Name="AnualSaleryId" />
+    </Key>
+    <Property Name="AnualSaleryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnualSalery" Type="int" />
+  </EntityType>
+  <EntityType Name="TblAnualSaleryInThousent">
+    <Key>
+      <PropertyRef Name="AnualSaleryInThousentId" />
+    </Key>
+    <Property Name="AnualSaleryInThousentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnualSaleryInThouset" Type="int" />
+  </EntityType>
+  <EntityType Name="TblCity">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="250" />
+    <Property Name="DistId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblCompany">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="CotactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+    <Property Name="UsetName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyWebsite" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IndustryTypeId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblCompanyMessageRecived">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="MessageDate" Type="datetime" />
+    <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="IsApplyed" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblCompanyMessageSend">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="SendDate" Type="datetime" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblCountry">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TblDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="350" />
+    <Property Name="IndustryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblDist">
+    <Key>
+      <PropertyRef Name="DistId" />
+    </Key>
+    <Property Name="DistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistName" Type="nvarchar" MaxLength="250" />
+    <Property Name="StateId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblEducation">
+    <Key>
+      <PropertyRef Name="EdgucationId" />
+    </Key>
+    <Property Name="EdgucationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EducationType" Type="int" />
+    <Property Name="StartMonth" Type="int" />
+    <Property Name="StartYear" Type="int" />
+    <Property Name="CollageName" Type="nvarchar" MaxLength="250" />
+    <Property Name="QualificationId" Type="int" />
+    <Property Name="SkillSetId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="PassingMonth" Type="int" />
+    <Property Name="PassingYear" Type="int" />
+  </EntityType>
+  <EntityType Name="TblEducationType">
+    <Key>
+      <PropertyRef Name="EducationTypeId" />
+    </Key>
+    <Property Name="EducationTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EducationType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblEmployement">
+    <Key>
+      <PropertyRef Name="EmployementId" />
+    </Key>
+    <Property Name="EmployementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IscurrentCompany" Type="bit" />
+    <Property Name="SkillSetId" Type="int" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LocationDisrictId" Type="int" />
+    <Property Name="StartMonth" Type="int" />
+    <Property Name="StartYear" Type="int" />
+    <Property Name="NoticePeriod" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="IsEnable" Type="bit" />
+    <Property Name="EndMonth" Type="int" />
+    <Property Name="EndYear" Type="int" />
+    <Property Name="UearId" Type="int" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnualSaleryInLakh" Type="int" />
+    <Property Name="AnualSaleryInThousent" Type="int" />
+    <Property Name="SaleryIn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblEndustry">
+    <Key>
+      <PropertyRef Name="EndustryId" />
+    </Key>
+    <Property Name="EndustryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EndustryName" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TblExpreance">
+    <Key>
+      <PropertyRef Name="ExprenceId" />
+    </Key>
+    <Property Name="ExprenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpreanceInMonth" Type="int" />
+    <Property Name="ExpreanceInYear" Type="int" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblHighestQualification">
+    <Key>
+      <PropertyRef Name="QualificationId" />
+    </Key>
+    <Property Name="QualificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QualificationName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblImage">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="TblJobApplication">
+    <Key>
+      <PropertyRef Name="JobApplicationId" />
+    </Key>
+    <Property Name="JobApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobPostId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblJobPost">
+    <Key>
+      <PropertyRef Name="JobPostId" />
+    </Key>
+    <Property Name="JobPostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="JobCategory" Type="int" />
+    <Property Name="JobPosition" Type="int" />
+    <Property Name="JobDisctiption" Type="nvarchar" MaxLength="1000" />
+    <Property Name="NoticePerionInDays" Type="int" />
+    <Property Name="NoticePeriodInMonth" Type="int" />
+    <Property Name="SaleryRs" Type="int" />
+    <Property Name="SaleryDoller" Type="int" />
+    <Property Name="Exprience" Type="int" />
+    <Property Name="PostionOpen" Type="int" />
+    <Property Name="IsEnable" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblJobSaved">
+    <Key>
+      <PropertyRef Name="JobSaveId" />
+    </Key>
+    <Property Name="JobSaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobPostId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblPosition">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblProfileSummery">
+    <Key>
+      <PropertyRef Name="ProfileSummeryId" />
+    </Key>
+    <Property Name="ProfileSummeryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileSummery" Type="nvarchar" MaxLength="4000" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblProfileViewed">
+    <Key>
+      <PropertyRef Name="ProfileViewdId" />
+    </Key>
+    <Property Name="ProfileViewdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ViewedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TblProject">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjectDetails" Type="nvarchar" MaxLength="4000" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="StartMonth" Type="int" />
+    <Property Name="StartYear" Type="int" />
+    <Property Name="EndMonth" Type="int" />
+    <Property Name="EndYear" Type="int" />
+    <Property Name="CurrentWorking" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblResume">
+    <Key>
+      <PropertyRef Name="ResumeId" />
+    </Key>
+    <Property Name="ResumeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResumePath" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="TblSkillSet">
+    <Key>
+      <PropertyRef Name="SkillSetId" />
+    </Key>
+    <Property Name="SkillSetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillSet" Type="nvarchar" MaxLength="1000" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblState">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="250" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="400" />
+    <Property Name="GenderId" Type="varchar" MaxLength="6" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="250" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="ProfilePicId" Type="int" />
+    <Property Name="ResumeId" Type="int" />
+    <Property Name="IsEnable" Type="bit" />
+    <Property Name="UserType" Type="int" />
+    <Property Name="MobileNo" Type="int" />
+  </EntityType>
+  <EntityType Name="TblUserMessageRecived">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="MessageDate" Type="datetime" />
+    <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="IsApplyed" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblUserMessageSend">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="SendDate" Type="datetime" />
+    <Property Name="IsEnable" Type="bit" />
+    <Property Name="PostId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeId" />
+    </Key>
+    <Property Name="UserTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TblYear">
+    <Key>
+      <PropertyRef Name="YearId" />
+    </Key>
+    <Property Name="YearId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" />
+  </EntityType>
+  <EntityContainer Name="MyJobPortalModelStoreContainer">
+    <EntitySet Name="AdminMst" EntityType="Self.AdminMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyMst" EntityType="Self.CompanyMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dist" EntityType="Self.Dist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EdgucationMst" EntityType="Self.EdgucationMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empolyeement" EntityType="Self.Empolyeement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostJobMst" EntityType="Self.PostJobMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SekerMst" EntityType="Self.SekerMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taluka" EntityType="Self.Taluka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAddress" EntityType="Self.TblAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAnualInLakhSalery" EntityType="Self.TblAnualInLakhSalery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAnualSaleryInThousent" EntityType="Self.TblAnualSaleryInThousent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCity" EntityType="Self.TblCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCompany" EntityType="Self.TblCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCompanyMessageRecived" EntityType="Self.TblCompanyMessageRecived" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCompanyMessageSend" EntityType="Self.TblCompanyMessageSend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCountry" EntityType="Self.TblCountry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDist" EntityType="Self.TblDist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEducation" EntityType="Self.TblEducation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEducationType" EntityType="Self.TblEducationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEmployement" EntityType="Self.TblEmployement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEndustry" EntityType="Self.TblEndustry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblExpreance" EntityType="Self.TblExpreance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblHighestQualification" EntityType="Self.TblHighestQualification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblImage" EntityType="Self.TblImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblJobApplication" EntityType="Self.TblJobApplication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblJobPost" EntityType="Self.TblJobPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblJobSaved" EntityType="Self.TblJobSaved" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblPosition" EntityType="Self.TblPosition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProfileSummery" EntityType="Self.TblProfileSummery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProfileViewed" EntityType="Self.TblProfileViewed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProject" EntityType="Self.TblProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSkillSet" EntityType="Self.TblSkillSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblState" EntityType="Self.TblState" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUserMessageRecived" EntityType="Self.TblUserMessageRecived" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUserMessageSend" EntityType="Self.TblUserMessageSend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUserType" EntityType="Self.TblUserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblYear" EntityType="Self.TblYear" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

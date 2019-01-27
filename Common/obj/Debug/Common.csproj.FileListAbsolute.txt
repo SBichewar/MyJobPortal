@@ -1,0 +1,4 @@
+D:\MyJob\MyJob\MyJob\Common\bin\Debug\Common.dll
+D:\MyJob\MyJob\MyJob\Common\bin\Debug\Common.pdb
+D:\MyJob\MyJob\MyJob\Common\obj\Debug\Common.dll
+D:\MyJob\MyJob\MyJob\Common\obj\Debug\Common.pdb

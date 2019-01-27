@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0c81dab5793454587d26a5177c513fa" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="MyJobPortalModel.AdminMst" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.CompanyMst" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.Country" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.Dist" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.PostJobMst" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.SekerMst" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.State" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.Taluka" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblAddress" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblCity" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblCompany" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblCompanyMessageRecived" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblCompanyMessageSend" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblCountry" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblDist" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblEndustry" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblImage" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblJobApplication" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblJobPost" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblJobSaved" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblPosition" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblProfileViewed" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblState" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblUserMessageRecived" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblUserMessageSend" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblUserType" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyJobPortalModel.EdgucationMst" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblDepartment" Width="1.5" PointX="2.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblHighestQualification" Width="1.5" PointX="9.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblEducationType" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblEducation" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblYear" Width="1.5" PointX="17.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblAnualInLakhSalery" Width="1.5" PointX="15.375" PointY="16.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblAnualSaleryInThousent" Width="1.5" PointX="17.375" PointY="6.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblExpreance" Width="1.5" PointX="5.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblEmployement" Width="1.5" PointX="17.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblUser" Width="1.5" PointX="12.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblSkillSet" Width="1.5" PointX="17.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblProfileSummery" Width="1.5" PointX="17.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblResume" Width="1.5" PointX="19.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MyJobPortalModel.TblProject" Width="1.5" PointX="19.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

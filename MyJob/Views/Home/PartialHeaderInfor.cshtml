@@ -1,0 +1,27 @@
+﻿@{
+    var UserInfo = ViewBag.UserInfo;
+}
+    <div class="row">
+        
+        <div class="col-md-3">
+            <div>
+            @* <img src="@UserInfo.ProfilePic" alt="" />*@
+            <img src="~/img/@UserInfo.ImagePath" alt="" style="border-radius: 50%; width: 100px;    height: 100px;" />
+                </div>
+            <div id="divFullName">@UserInfo.FullName</div>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li>@UserInfo.Address</li>
+                <li>@UserInfo.CityName</li>
+                <li>@UserInfo.EmailId</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li>@UserInfo.MobileNo</li>
+                <li>@UserInfo.AnualSaleryInLakh</li>
+                <li>@UserInfo.AnualSaleryInThousent</li>
+            </ul>
+        </div>
+    </div>

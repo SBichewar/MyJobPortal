@@ -1,0 +1,1511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyJobPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminMst">
+          <Key>
+            <PropertyRef Name="Aid" />
+          </Key>
+          <Property Name="Aid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="CompanyMst">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPersion" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="500" />
+          <Property Name="Uname" Type="nvarchar" MaxLength="500" />
+          <Property Name="Website" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="IsEable" Type="bit" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="Dist">
+          <Key>
+            <PropertyRef Name="DistId" />
+          </Key>
+          <Property Name="DistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistName" Type="nvarchar" MaxLength="200" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EdgucationMst">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sid" Type="int" />
+          <Property Name="CollageName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Enrollno" Type="nvarchar" MaxLength="500" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="500" />
+          <Property Name="Edgucation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passyear" Type="varchar" MaxLength="50" />
+          <Property Name="CPI" Type="float" />
+          <Property Name="CGPA" Type="float" />
+          <Property Name="Skill" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExtraSkill" Type="nvarchar" MaxLength="50" />
+          <Property Name="Resume" Type="nvarchar(max)" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Empolyeement">
+          <Key>
+            <PropertyRef Name="EmpoyementId" />
+          </Key>
+          <Property Name="EmpoyementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrentCompany" Type="nvarchar" MaxLength="500" />
+          <Property Name="AnualSaleryInLakh" Type="int" />
+          <Property Name="AnualSaleryInThousent" Type="int" />
+          <Property Name="WrokingFromYear" Type="int" />
+          <Property Name="WrokingFromMonath" Type="nchar" MaxLength="10" />
+          <Property Name="CompanyNumber" Type="int" />
+          <Property Name="CurrentLocationId" Type="int" />
+          <Property Name="NoticePeriod" Type="int" />
+          <Property Name="NoticePeriodType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkilId" Type="int" />
+        </EntityType>
+        <EntityType Name="PostJobMst">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cid" Type="int" />
+          <Property Name="JobCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequireSkill" Type="nvarchar" MaxLength="500" />
+          <Property Name="ExprienceRequire" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="PostDiscription" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="SekerMst">
+          <Key>
+            <PropertyRef Name="Sid" />
+          </Key>
+          <Property Name="Sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnrollNo" Type="nvarchar(max)" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Dob" Type="datetime" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Resume" Type="varchar" MaxLength="1000" />
+          <Property Name="ProfilePic" Type="varchar" MaxLength="1000" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="Taluka">
+          <Key>
+            <PropertyRef Name="TalukaId" />
+          </Key>
+          <Property Name="TalukaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TalukaName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DistId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblAddress">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="10" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="AddressType" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblAnualInLakhSalery">
+          <Key>
+            <PropertyRef Name="AnualSaleryId" />
+          </Key>
+          <Property Name="AnualSaleryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnualSalery" Type="int" />
+        </EntityType>
+        <EntityType Name="TblAnualSaleryInThousent">
+          <Key>
+            <PropertyRef Name="AnualSaleryInThousentId" />
+          </Key>
+          <Property Name="AnualSaleryInThousentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnualSaleryInThouset" Type="int" />
+        </EntityType>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="250" />
+          <Property Name="DistId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblCompany">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="CotactNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsetName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyWebsite" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IndustryTypeId" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblCompanyMessageRecived">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="MessageDate" Type="datetime" />
+          <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="PostId" Type="int" />
+          <Property Name="IsApplyed" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblCompanyMessageSend">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+          <Property Name="PostId" Type="int" />
+          <Property Name="SendDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblDepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="350" />
+          <Property Name="IndustryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblDist">
+          <Key>
+            <PropertyRef Name="DistId" />
+          </Key>
+          <Property Name="DistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistName" Type="nvarchar" MaxLength="250" />
+          <Property Name="StateId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblEducation">
+          <Key>
+            <PropertyRef Name="EdgucationId" />
+          </Key>
+          <Property Name="EdgucationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="EducationType" Type="int" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="StartYear" Type="int" />
+          <Property Name="CollageName" Type="nvarchar" MaxLength="250" />
+          <Property Name="QualificationId" Type="int" />
+          <Property Name="SkillSetId" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="PassingMonth" Type="int" />
+          <Property Name="PassingYear" Type="int" />
+        </EntityType>
+        <EntityType Name="TblEducationType">
+          <Key>
+            <PropertyRef Name="EducationTypeId" />
+          </Key>
+          <Property Name="EducationTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EducationType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblEmployement">
+          <Key>
+            <PropertyRef Name="EmployementId" />
+          </Key>
+          <Property Name="EmployementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IscurrentCompany" Type="bit" />
+          <Property Name="SkillSetId" Type="int" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LocationDisrictId" Type="int" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="StartYear" Type="int" />
+          <Property Name="NoticePeriod" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="EndMonth" Type="int" />
+          <Property Name="EndYear" Type="int" />
+          <Property Name="UearId" Type="int" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="500" />
+          <Property Name="AnualSaleryInLakh" Type="int" />
+          <Property Name="AnualSaleryInThousent" Type="int" />
+          <Property Name="SaleryIn" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblEndustry">
+          <Key>
+            <PropertyRef Name="EndustryId" />
+          </Key>
+          <Property Name="EndustryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EndustryName" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblExpreance">
+          <Key>
+            <PropertyRef Name="ExprenceId" />
+          </Key>
+          <Property Name="ExprenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpreanceInMonth" Type="int" />
+          <Property Name="ExpreanceInYear" Type="int" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblHighestQualification">
+          <Key>
+            <PropertyRef Name="QualificationId" />
+          </Key>
+          <Property Name="QualificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QualificationName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblImage">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="TblJobApplication">
+          <Key>
+            <PropertyRef Name="JobApplicationId" />
+          </Key>
+          <Property Name="JobApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobPostId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblJobPost">
+          <Key>
+            <PropertyRef Name="JobPostId" />
+          </Key>
+          <Property Name="JobPostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="JobCategory" Type="int" />
+          <Property Name="JobPosition" Type="int" />
+          <Property Name="JobDisctiption" Type="nvarchar" MaxLength="1000" />
+          <Property Name="NoticePerionInDays" Type="int" />
+          <Property Name="NoticePeriodInMonth" Type="int" />
+          <Property Name="SaleryRs" Type="int" />
+          <Property Name="SaleryDoller" Type="int" />
+          <Property Name="Exprience" Type="int" />
+          <Property Name="PostionOpen" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblJobSaved">
+          <Key>
+            <PropertyRef Name="JobSaveId" />
+          </Key>
+          <Property Name="JobSaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobPostId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblPosition">
+          <Key>
+            <PropertyRef Name="PositionId" />
+          </Key>
+          <Property Name="PositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblProfileSummery">
+          <Key>
+            <PropertyRef Name="ProfileSummeryId" />
+          </Key>
+          <Property Name="ProfileSummeryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfileSummery" Type="nvarchar" MaxLength="4000" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblProfileViewed">
+          <Key>
+            <PropertyRef Name="ProfileViewdId" />
+          </Key>
+          <Property Name="ProfileViewdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="ViewedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TblProject">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProjectDetails" Type="nvarchar" MaxLength="4000" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="StartYear" Type="int" />
+          <Property Name="EndMonth" Type="int" />
+          <Property Name="EndYear" Type="int" />
+          <Property Name="CurrentWorking" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblResume">
+          <Key>
+            <PropertyRef Name="ResumeId" />
+          </Key>
+          <Property Name="ResumeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResumePath" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="TblSkillSet">
+          <Key>
+            <PropertyRef Name="SkillSetId" />
+          </Key>
+          <Property Name="SkillSetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillSet" Type="nvarchar" MaxLength="1000" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblState">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="250" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="400" />
+          <Property Name="GenderId" Type="varchar" MaxLength="6" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="250" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="ProfilePicId" Type="int" />
+          <Property Name="ResumeId" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="MobileNo" Type="int" />
+        </EntityType>
+        <EntityType Name="TblUserMessageRecived">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="MessageDate" Type="datetime" />
+          <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="PostId" Type="int" />
+          <Property Name="IsApplyed" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblUserMessageSend">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="MessageDiscription" Type="nvarchar" MaxLength="4000" />
+          <Property Name="SendDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="PostId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblUserType">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Name="UserTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblYear">
+          <Key>
+            <PropertyRef Name="YearId" />
+          </Key>
+          <Property Name="YearId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
+        <EntityContainer Name="MyJobPortalModelStoreContainer">
+          <EntitySet Name="AdminMst" EntityType="Self.AdminMst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyMst" EntityType="Self.CompanyMst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dist" EntityType="Self.Dist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EdgucationMst" EntityType="Self.EdgucationMst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empolyeement" EntityType="Self.Empolyeement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostJobMst" EntityType="Self.PostJobMst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SekerMst" EntityType="Self.SekerMst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Taluka" EntityType="Self.Taluka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAddress" EntityType="Self.TblAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAnualInLakhSalery" EntityType="Self.TblAnualInLakhSalery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAnualSaleryInThousent" EntityType="Self.TblAnualSaleryInThousent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCity" EntityType="Self.TblCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCompany" EntityType="Self.TblCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCompanyMessageRecived" EntityType="Self.TblCompanyMessageRecived" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCompanyMessageSend" EntityType="Self.TblCompanyMessageSend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCountry" EntityType="Self.TblCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDist" EntityType="Self.TblDist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEducation" EntityType="Self.TblEducation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEducationType" EntityType="Self.TblEducationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEmployement" EntityType="Self.TblEmployement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEndustry" EntityType="Self.TblEndustry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblExpreance" EntityType="Self.TblExpreance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHighestQualification" EntityType="Self.TblHighestQualification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblImage" EntityType="Self.TblImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblJobApplication" EntityType="Self.TblJobApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblJobPost" EntityType="Self.TblJobPost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblJobSaved" EntityType="Self.TblJobSaved" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPosition" EntityType="Self.TblPosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProfileSummery" EntityType="Self.TblProfileSummery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProfileViewed" EntityType="Self.TblProfileViewed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProject" EntityType="Self.TblProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSkillSet" EntityType="Self.TblSkillSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblState" EntityType="Self.TblState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUserMessageRecived" EntityType="Self.TblUserMessageRecived" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUserMessageSend" EntityType="Self.TblUserMessageSend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUserType" EntityType="Self.TblUserType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblYear" EntityType="Self.TblYear" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyJobPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminMst">
+          <Key>
+            <PropertyRef Name="Aid" />
+          </Key>
+          <Property Name="Aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CompanyMst">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPersion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Uname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Dist">
+          <Key>
+            <PropertyRef Name="DistId" />
+          </Key>
+          <Property Name="DistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostJobMst">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cid" Type="Int32" />
+          <Property Name="JobCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequireSkill" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ExprienceRequire" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="PostDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SekerMst">
+          <Key>
+            <PropertyRef Name="Sid" />
+          </Key>
+          <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnrollNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Dob" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="Resume" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Taluka">
+          <Key>
+            <PropertyRef Name="TalukaId" />
+          </Key>
+          <Property Name="TalukaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TalukaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DistId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblAddress">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="AddressType" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DistId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblCompany">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CotactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsetName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyWebsite" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IndustryTypeId" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblCompanyMessageRecived">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="MessageDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="PostId" Type="Int32" />
+          <Property Name="IsApplyed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblCompanyMessageSend">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="PostId" Type="Int32" />
+          <Property Name="SendDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblDist">
+          <Key>
+            <PropertyRef Name="DistId" />
+          </Key>
+          <Property Name="DistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="StateId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblEndustry">
+          <Key>
+            <PropertyRef Name="EndustryId" />
+          </Key>
+          <Property Name="EndustryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EndustryName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblImage">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImagePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblJobApplication">
+          <Key>
+            <PropertyRef Name="JobApplicationId" />
+          </Key>
+          <Property Name="JobApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobPostId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblJobPost">
+          <Key>
+            <PropertyRef Name="JobPostId" />
+          </Key>
+          <Property Name="JobPostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="JobCategory" Type="Int32" />
+          <Property Name="JobPosition" Type="Int32" />
+          <Property Name="JobDisctiption" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="NoticePerionInDays" Type="Int32" />
+          <Property Name="NoticePeriodInMonth" Type="Int32" />
+          <Property Name="SaleryRs" Type="Int32" />
+          <Property Name="SaleryDoller" Type="Int32" />
+          <Property Name="Exprience" Type="Int32" />
+          <Property Name="PostionOpen" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblJobSaved">
+          <Key>
+            <PropertyRef Name="JobSaveId" />
+          </Key>
+          <Property Name="JobSaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobPostId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblPosition">
+          <Key>
+            <PropertyRef Name="PositionId" />
+          </Key>
+          <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblProfileViewed">
+          <Key>
+            <PropertyRef Name="ProfileViewdId" />
+          </Key>
+          <Property Name="ProfileViewdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="ViewedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TblState">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblUserMessageRecived">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="MessageDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="PostId" Type="Int32" />
+          <Property Name="IsApplyed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblUserMessageSend">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="MessageDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="SendDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="PostId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblUserType">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Name="UserTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MyJobPortalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminMsts" EntityType="Self.AdminMst" />
+          <EntitySet Name="CompanyMsts" EntityType="Self.CompanyMst" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Dists" EntityType="Self.Dist" />
+          <EntitySet Name="PostJobMsts" EntityType="Self.PostJobMst" />
+          <EntitySet Name="SekerMsts" EntityType="Self.SekerMst" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <EntitySet Name="Talukas" EntityType="Self.Taluka" />
+          <EntitySet Name="TblAddresses" EntityType="Self.TblAddress" />
+          <EntitySet Name="TblCities" EntityType="Self.TblCity" />
+          <EntitySet Name="TblCompanies" EntityType="Self.TblCompany" />
+          <EntitySet Name="TblCompanyMessageReciveds" EntityType="Self.TblCompanyMessageRecived" />
+          <EntitySet Name="TblCompanyMessageSends" EntityType="Self.TblCompanyMessageSend" />
+          <EntitySet Name="TblCountries" EntityType="Self.TblCountry" />
+          <EntitySet Name="TblDists" EntityType="Self.TblDist" />
+          <EntitySet Name="TblEndustries" EntityType="Self.TblEndustry" />
+          <EntitySet Name="TblImages" EntityType="Self.TblImage" />
+          <EntitySet Name="TblJobApplications" EntityType="Self.TblJobApplication" />
+          <EntitySet Name="TblJobPosts" EntityType="Self.TblJobPost" />
+          <EntitySet Name="TblJobSaveds" EntityType="Self.TblJobSaved" />
+          <EntitySet Name="TblPositions" EntityType="Self.TblPosition" />
+          <EntitySet Name="TblProfileVieweds" EntityType="Self.TblProfileViewed" />
+          <EntitySet Name="TblStates" EntityType="Self.TblState" />
+          <EntitySet Name="TblUserMessageReciveds" EntityType="Self.TblUserMessageRecived" />
+          <EntitySet Name="TblUserMessageSends" EntityType="Self.TblUserMessageSend" />
+          <EntitySet Name="TblUserTypes" EntityType="Self.TblUserType" />
+          <EntitySet Name="EdgucationMsts" EntityType="MyJobPortalModel.EdgucationMst" />
+          <EntitySet Name="TblDepartments" EntityType="MyJobPortalModel.TblDepartment" />
+          <EntitySet Name="TblHighestQualifications" EntityType="MyJobPortalModel.TblHighestQualification" />
+          <EntitySet Name="TblEducationTypes" EntityType="MyJobPortalModel.TblEducationType" />
+          <EntitySet Name="TblEducations" EntityType="MyJobPortalModel.TblEducation" />
+          <EntitySet Name="TblYears" EntityType="MyJobPortalModel.TblYear" />
+          <EntitySet Name="TblAnualInLakhSaleries" EntityType="MyJobPortalModel.TblAnualInLakhSalery" />
+          <EntitySet Name="TblAnualSaleryInThousents" EntityType="MyJobPortalModel.TblAnualSaleryInThousent" />
+          <EntitySet Name="TblExpreances" EntityType="MyJobPortalModel.TblExpreance" />
+          <EntitySet Name="TblEmployements" EntityType="MyJobPortalModel.TblEmployement" />
+          <EntitySet Name="TblUsers" EntityType="MyJobPortalModel.TblUser" />
+          <EntitySet Name="TblSkillSets" EntityType="MyJobPortalModel.TblSkillSet" />
+          <EntitySet Name="TblProfileSummeries" EntityType="MyJobPortalModel.TblProfileSummery" />
+          <EntitySet Name="TblResumes" EntityType="MyJobPortalModel.TblResume" />
+          <EntitySet Name="TblProjects" EntityType="MyJobPortalModel.TblProject" />
+        </EntityContainer>
+        <EntityType Name="EdgucationMst">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sid" Type="Int32" />
+          <Property Name="CollageName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Enrollno" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Semester" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Edgucation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passyear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPI" Type="Double" />
+          <Property Name="CGPA" Type="Double" />
+          <Property Name="Skill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TblDepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="IndustryId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblHighestQualification">
+          <Key>
+            <PropertyRef Name="QualificationId" />
+          </Key>
+          <Property Name="QualificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QualificationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblEducationType">
+          <Key>
+            <PropertyRef Name="EducationTypeId" />
+          </Key>
+          <Property Name="EducationTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EducationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblEducation">
+          <Key>
+            <PropertyRef Name="EdgucationId" />
+          </Key>
+          <Property Name="EdgucationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="EducationType" Type="Int32" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="StartYear" Type="Int32" />
+          <Property Name="CollageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="QualificationId" Type="Int32" />
+          <Property Name="SkillSetId" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="PassingMonth" Type="Int32" />
+          <Property Name="PassingYear" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblYear">
+          <Key>
+            <PropertyRef Name="YearId" />
+          </Key>
+          <Property Name="YearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblAnualInLakhSalery">
+          <Key>
+            <PropertyRef Name="AnualSaleryId" />
+          </Key>
+          <Property Name="AnualSaleryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnualSalery" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblAnualSaleryInThousent">
+          <Key>
+            <PropertyRef Name="AnualSaleryInThousentId" />
+          </Key>
+          <Property Name="AnualSaleryInThousentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnualSaleryInThouset" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblExpreance">
+          <Key>
+            <PropertyRef Name="ExprenceId" />
+          </Key>
+          <Property Name="ExprenceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpreanceInMonth" Type="Int32" />
+          <Property Name="ExpreanceInYear" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblEmployement">
+          <Key>
+            <PropertyRef Name="EmployementId" />
+          </Key>
+          <Property Name="EmployementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IscurrentCompany" Type="Boolean" />
+          <Property Name="SkillSetId" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LocationDisrictId" Type="Int32" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="StartYear" Type="Int32" />
+          <Property Name="NoticePeriod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="EndMonth" Type="Int32" />
+          <Property Name="EndYear" Type="Int32" />
+          <Property Name="UearId" Type="Int32" />
+          <Property Name="Designation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AnualSaleryInLakh" Type="Int32" />
+          <Property Name="AnualSaleryInThousent" Type="Int32" />
+          <Property Name="SaleryIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="GenderId" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ProfilePicId" Type="Int32" />
+          <Property Name="ResumeId" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="UserType" Type="Int32" />
+          <Property Name="MobileNo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblSkillSet">
+          <Key>
+            <PropertyRef Name="SkillSetId" />
+          </Key>
+          <Property Name="SkillSetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillSet" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblProfileSummery">
+          <Key>
+            <PropertyRef Name="ProfileSummeryId" />
+          </Key>
+          <Property Name="ProfileSummeryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileSummery" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblResume">
+          <Key>
+            <PropertyRef Name="ResumeId" />
+          </Key>
+          <Property Name="ResumeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResumePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblProject">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDetails" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="StartYear" Type="Int32" />
+          <Property Name="EndMonth" Type="Int32" />
+          <Property Name="EndYear" Type="Int32" />
+          <Property Name="CurrentWorking" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyJobPortalModelStoreContainer" CdmEntityContainer="MyJobPortalEntities">
+          <EntitySetMapping Name="AdminMsts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.AdminMst">
+              <MappingFragment StoreEntitySet="AdminMst">
+                <ScalarProperty Name="Aid" ColumnName="Aid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyMsts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.CompanyMst">
+              <MappingFragment StoreEntitySet="CompanyMst">
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="CName" ColumnName="CName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="ContactPersion" ColumnName="ContactPersion" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="IsEable" ColumnName="IsEable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MyJobPortalModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dists">
+            <EntityTypeMapping TypeName="MyJobPortalModel.Dist">
+              <MappingFragment StoreEntitySet="Dist">
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+                <ScalarProperty Name="DistName" ColumnName="DistName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostJobMsts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.PostJobMst">
+              <MappingFragment StoreEntitySet="PostJobMst">
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+                <ScalarProperty Name="RequireSkill" ColumnName="RequireSkill" />
+                <ScalarProperty Name="ExprienceRequire" ColumnName="ExprienceRequire" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="PostDiscription" ColumnName="PostDiscription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SekerMsts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.SekerMst">
+              <MappingFragment StoreEntitySet="SekerMst">
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="EnrollNo" ColumnName="EnrollNo" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="MyJobPortalModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Talukas">
+            <EntityTypeMapping TypeName="MyJobPortalModel.Taluka">
+              <MappingFragment StoreEntitySet="Taluka">
+                <ScalarProperty Name="TalukaId" ColumnName="TalukaId" />
+                <ScalarProperty Name="TalukaName" ColumnName="TalukaName" />
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAddresses">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblAddress">
+              <MappingFragment StoreEntitySet="TblAddress">
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCities">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblCity">
+              <MappingFragment StoreEntitySet="TblCity">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCompanies">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblCompany">
+              <MappingFragment StoreEntitySet="TblCompany">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CotactNumber" ColumnName="CotactNumber" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="UsetName" ColumnName="UsetName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+                <ScalarProperty Name="IndustryTypeId" ColumnName="IndustryTypeId" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCompanyMessageReciveds">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblCompanyMessageRecived">
+              <MappingFragment StoreEntitySet="TblCompanyMessageRecived">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="IsApplyed" ColumnName="IsApplyed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCompanyMessageSends">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblCompanyMessageSend">
+              <MappingFragment StoreEntitySet="TblCompanyMessageSend">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCountries">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblCountry">
+              <MappingFragment StoreEntitySet="TblCountry">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDists">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblDist">
+              <MappingFragment StoreEntitySet="TblDist">
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+                <ScalarProperty Name="DistName" ColumnName="DistName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEndustries">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblEndustry">
+              <MappingFragment StoreEntitySet="TblEndustry">
+                <ScalarProperty Name="EndustryId" ColumnName="EndustryId" />
+                <ScalarProperty Name="EndustryName" ColumnName="EndustryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblImages">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblImage">
+              <MappingFragment StoreEntitySet="TblImage">
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblJobApplications">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblJobApplication">
+              <MappingFragment StoreEntitySet="TblJobApplication">
+                <ScalarProperty Name="JobApplicationId" ColumnName="JobApplicationId" />
+                <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblJobPosts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblJobPost">
+              <MappingFragment StoreEntitySet="TblJobPost">
+                <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+                <ScalarProperty Name="JobPosition" ColumnName="JobPosition" />
+                <ScalarProperty Name="JobDisctiption" ColumnName="JobDisctiption" />
+                <ScalarProperty Name="NoticePerionInDays" ColumnName="NoticePerionInDays" />
+                <ScalarProperty Name="NoticePeriodInMonth" ColumnName="NoticePeriodInMonth" />
+                <ScalarProperty Name="SaleryRs" ColumnName="SaleryRs" />
+                <ScalarProperty Name="SaleryDoller" ColumnName="SaleryDoller" />
+                <ScalarProperty Name="Exprience" ColumnName="Exprience" />
+                <ScalarProperty Name="PostionOpen" ColumnName="PostionOpen" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblJobSaveds">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblJobSaved">
+              <MappingFragment StoreEntitySet="TblJobSaved">
+                <ScalarProperty Name="JobSaveId" ColumnName="JobSaveId" />
+                <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPositions">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblPosition">
+              <MappingFragment StoreEntitySet="TblPosition">
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProfileVieweds">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblProfileViewed">
+              <MappingFragment StoreEntitySet="TblProfileViewed">
+                <ScalarProperty Name="ProfileViewdId" ColumnName="ProfileViewdId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ViewedDate" ColumnName="ViewedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblStates">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblState">
+              <MappingFragment StoreEntitySet="TblState">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUserMessageReciveds">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblUserMessageRecived">
+              <MappingFragment StoreEntitySet="TblUserMessageRecived">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="IsApplyed" ColumnName="IsApplyed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUserMessageSends">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblUserMessageSend">
+              <MappingFragment StoreEntitySet="TblUserMessageSend">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUserTypes">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblUserType">
+              <MappingFragment StoreEntitySet="TblUserType">
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EdgucationMsts">
+            <EntityTypeMapping TypeName="MyJobPortalModel.EdgucationMst">
+              <MappingFragment StoreEntitySet="EdgucationMst">
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+                <ScalarProperty Name="CPI" ColumnName="CPI" />
+                <ScalarProperty Name="Passyear" ColumnName="Passyear" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Edgucation" ColumnName="Edgucation" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Enrollno" ColumnName="Enrollno" />
+                <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDepartments">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblDepartment">
+              <MappingFragment StoreEntitySet="TblDepartment">
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHighestQualifications">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblHighestQualification">
+              <MappingFragment StoreEntitySet="TblHighestQualification">
+                <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEducationTypes">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblEducationType">
+              <MappingFragment StoreEntitySet="TblEducationType">
+                <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+                <ScalarProperty Name="EducationTypeId" ColumnName="EducationTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEducations">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblEducation">
+              <MappingFragment StoreEntitySet="TblEducation">
+                <ScalarProperty Name="PassingYear" ColumnName="PassingYear" />
+                <ScalarProperty Name="PassingMonth" ColumnName="PassingMonth" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="SkillSetId" ColumnName="SkillSetId" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+                <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="EdgucationId" ColumnName="EdgucationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblYears">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblYear">
+              <MappingFragment StoreEntitySet="TblYear">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="YearId" ColumnName="YearId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAnualInLakhSaleries">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblAnualInLakhSalery">
+              <MappingFragment StoreEntitySet="TblAnualInLakhSalery">
+                <ScalarProperty Name="AnualSalery" ColumnName="AnualSalery" />
+                <ScalarProperty Name="AnualSaleryId" ColumnName="AnualSaleryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAnualSaleryInThousents">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblAnualSaleryInThousent">
+              <MappingFragment StoreEntitySet="TblAnualSaleryInThousent">
+                <ScalarProperty Name="AnualSaleryInThouset" ColumnName="AnualSaleryInThouset" />
+                <ScalarProperty Name="AnualSaleryInThousentId" ColumnName="AnualSaleryInThousentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblExpreances">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblExpreance">
+              <MappingFragment StoreEntitySet="TblExpreance">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ExpreanceInYear" ColumnName="ExpreanceInYear" />
+                <ScalarProperty Name="ExpreanceInMonth" ColumnName="ExpreanceInMonth" />
+                <ScalarProperty Name="ExprenceId" ColumnName="ExprenceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEmployements">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblEmployement">
+              <MappingFragment StoreEntitySet="TblEmployement">
+                <ScalarProperty Name="SaleryIn" ColumnName="SaleryIn" />
+                <ScalarProperty Name="AnualSaleryInThousent" ColumnName="AnualSaleryInThousent" />
+                <ScalarProperty Name="AnualSaleryInLakh" ColumnName="AnualSaleryInLakh" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="UearId" ColumnName="UearId" />
+                <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+                <ScalarProperty Name="EndMonth" ColumnName="EndMonth" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="LocationDisrictId" ColumnName="LocationDisrictId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="SkillSetId" ColumnName="SkillSetId" />
+                <ScalarProperty Name="IscurrentCompany" ColumnName="IscurrentCompany" />
+                <ScalarProperty Name="EmployementId" ColumnName="EmployementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUsers">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="ResumeId" ColumnName="ResumeId" />
+                <ScalarProperty Name="ProfilePicId" ColumnName="ProfilePicId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSkillSets">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblSkillSet">
+              <MappingFragment StoreEntitySet="TblSkillSet">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SkillSet" ColumnName="SkillSet" />
+                <ScalarProperty Name="SkillSetId" ColumnName="SkillSetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProfileSummeries">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblProfileSummery">
+              <MappingFragment StoreEntitySet="TblProfileSummery">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProfileSummery" ColumnName="ProfileSummery" />
+                <ScalarProperty Name="ProfileSummeryId" ColumnName="ProfileSummeryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblResumes">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblResume">
+              <MappingFragment StoreEntitySet="TblResume">
+                <ScalarProperty Name="ResumePath" ColumnName="ResumePath" />
+                <ScalarProperty Name="ResumeId" ColumnName="ResumeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProjects">
+            <EntityTypeMapping TypeName="MyJobPortalModel.TblProject">
+              <MappingFragment StoreEntitySet="TblProject">
+                <ScalarProperty Name="CurrentWorking" ColumnName="CurrentWorking" />
+                <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+                <ScalarProperty Name="EndMonth" ColumnName="EndMonth" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProjectDetails" ColumnName="ProjectDetails" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

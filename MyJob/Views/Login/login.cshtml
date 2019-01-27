@@ -1,0 +1,38 @@
+﻿@model Common.Login
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/NoramlLayout.cshtml";
+}
+
+<h2>login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">  
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.LabelFor(model => model.EmailId)
+
+                    @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email" } })
+                    @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-9">
+                    @Html.LabelFor(model => model.Password)
+
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="submit" value="Login" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,9 @@
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\DAL.dll.config
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\DAL.dll
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\DAL.pdb
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\EntityFramework.dll
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\EntityFramework.xml
+D:\MyJob\MyJob\MyJob\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyJob\MyJob\MyJob\DAL\obj\Debug\DAL.dll
+D:\MyJob\MyJob\MyJob\DAL\obj\Debug\DAL.pdb

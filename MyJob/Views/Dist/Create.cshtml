@@ -1,0 +1,80 @@
+﻿@model DAL.Dist
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/NoramlLayout.cshtml";
+}
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Country').change(function () {
+            var p_id = $('#Country').val();
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:53763/Dist/GetStateByContryId",
+                data: { CountryId: p_id },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    if (data != null) {
+                        var p_Upcomingobj = JSON.parse(data);
+                        var district = "<select id='ddlState'>";
+                        district = district + '<option value="">--Select--</option>';
+                        for (i in p_Upcomingobj) {
+                            district = district + '<option value=' + p_Upcomingobj[i].StateId + '>' + p_Upcomingobj[i].StateName + '</option>';
+                        }
+                        district = district + '</select>';
+                        $('#ddlState').html(district);
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.Label("Select Country")
+                    @Html.DropDownList("Country", ViewBag.Country as IEnumerable<SelectListItem>, "Select", new { htmlAttributes = new { @class = "form-control ListWidth" }, @style = "width: 100%; padding: 5px;border: 1px solid #ccc; border - radius: 4px; " })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.Label("Select State")
+
+                    @*  @Html.EditorFor(model => model.StateId, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownListFor(x => x.StateId, new List<SelectListItem>(), "--Select--", new { @id = "ddlState", @style = "width: 100%;    padding: 5px; border: 1px solid #ccc;border-radius: 4px;" })
+                    @Html.ValidationMessageFor(model => model.StateId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    @Html.LabelFor(model => model.DistName)
+
+                    @Html.EditorFor(model => model.DistName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DistName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

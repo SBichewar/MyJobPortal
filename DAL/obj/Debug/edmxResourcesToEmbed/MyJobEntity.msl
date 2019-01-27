@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyJobPortalModelStoreContainer" CdmEntityContainer="MyJobPortalEntities">
+    <EntitySetMapping Name="AdminMsts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.AdminMst">
+        <MappingFragment StoreEntitySet="AdminMst">
+          <ScalarProperty Name="Aid" ColumnName="Aid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyMsts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.CompanyMst">
+        <MappingFragment StoreEntitySet="CompanyMst">
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="ContactPersion" ColumnName="ContactPersion" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="IsEable" ColumnName="IsEable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="MyJobPortalModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dists">
+      <EntityTypeMapping TypeName="MyJobPortalModel.Dist">
+        <MappingFragment StoreEntitySet="Dist">
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EdgucationMsts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.EdgucationMst">
+        <MappingFragment StoreEntitySet="EdgucationMst">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+          <ScalarProperty Name="Enrollno" ColumnName="Enrollno" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Edgucation" ColumnName="Edgucation" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Passyear" ColumnName="Passyear" />
+          <ScalarProperty Name="CPI" ColumnName="CPI" />
+          <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="ExtraSkill" ColumnName="ExtraSkill" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empolyeements">
+      <EntityTypeMapping TypeName="MyJobPortalModel.Empolyeement">
+        <MappingFragment StoreEntitySet="Empolyeement">
+          <ScalarProperty Name="EmpoyementId" ColumnName="EmpoyementId" />
+          <ScalarProperty Name="CurrentCompany" ColumnName="CurrentCompany" />
+          <ScalarProperty Name="AnualSaleryInLakh" ColumnName="AnualSaleryInLakh" />
+          <ScalarProperty Name="AnualSaleryInThousent" ColumnName="AnualSaleryInThousent" />
+          <ScalarProperty Name="WrokingFromYear" ColumnName="WrokingFromYear" />
+          <ScalarProperty Name="WrokingFromMonath" ColumnName="WrokingFromMonath" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+          <ScalarProperty Name="CurrentLocationId" ColumnName="CurrentLocationId" />
+          <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+          <ScalarProperty Name="NoticePeriodType" ColumnName="NoticePeriodType" />
+          <ScalarProperty Name="SkilId" ColumnName="SkilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostJobMsts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.PostJobMst">
+        <MappingFragment StoreEntitySet="PostJobMst">
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+          <ScalarProperty Name="RequireSkill" ColumnName="RequireSkill" />
+          <ScalarProperty Name="ExprienceRequire" ColumnName="ExprienceRequire" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="PostDiscription" ColumnName="PostDiscription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SekerMsts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.SekerMst">
+        <MappingFragment StoreEntitySet="SekerMst">
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="EnrollNo" ColumnName="EnrollNo" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="MyJobPortalModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Talukas">
+      <EntityTypeMapping TypeName="MyJobPortalModel.Taluka">
+        <MappingFragment StoreEntitySet="Taluka">
+          <ScalarProperty Name="TalukaId" ColumnName="TalukaId" />
+          <ScalarProperty Name="TalukaName" ColumnName="TalukaName" />
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAddresses">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblAddress">
+        <MappingFragment StoreEntitySet="TblAddress">
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCities">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblCity">
+        <MappingFragment StoreEntitySet="TblCity">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCompanies">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblCompany">
+        <MappingFragment StoreEntitySet="TblCompany">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="CotactNumber" ColumnName="CotactNumber" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="UsetName" ColumnName="UsetName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="IndustryTypeId" ColumnName="IndustryTypeId" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCompanyMessageReciveds">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblCompanyMessageRecived">
+        <MappingFragment StoreEntitySet="TblCompanyMessageRecived">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="IsApplyed" ColumnName="IsApplyed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCompanyMessageSends">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblCompanyMessageSend">
+        <MappingFragment StoreEntitySet="TblCompanyMessageSend">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCountries">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblCountry">
+        <MappingFragment StoreEntitySet="TblCountry">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDists">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblDist">
+        <MappingFragment StoreEntitySet="TblDist">
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEducations">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblEducation">
+        <MappingFragment StoreEntitySet="TblEducation">
+          <ScalarProperty Name="EdgucationId" ColumnName="EdgucationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CollageName" ColumnName="CollageName" />
+          <ScalarProperty Name="BranceId" ColumnName="BranceId" />
+          <ScalarProperty Name="SkillSetId" ColumnName="SkillSetId" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEducationBranches">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblEducationBranch">
+        <MappingFragment StoreEntitySet="TblEducationBranch">
+          <ScalarProperty Name="EducationBranchId" ColumnName="EducationBranchId" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEmployements">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblEmployement">
+        <MappingFragment StoreEntitySet="TblEmployement">
+          <ScalarProperty Name="EmployementId" ColumnName="EmployementId" />
+          <ScalarProperty Name="IscurrentCompany" ColumnName="IscurrentCompany" />
+          <ScalarProperty Name="SkillSetId" ColumnName="SkillSetId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Exprience" ColumnName="Exprience" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="NoticePeriodInDays" ColumnName="NoticePeriodInDays" />
+          <ScalarProperty Name="NoticePeriodInMonth" ColumnName="NoticePeriodInMonth" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEndustries">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblEndustry">
+        <MappingFragment StoreEntitySet="TblEndustry">
+          <ScalarProperty Name="EndustryId" ColumnName="EndustryId" />
+          <ScalarProperty Name="EndustryName" ColumnName="EndustryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblImages">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblImage">
+        <MappingFragment StoreEntitySet="TblImage">
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblJobApplications">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblJobApplication">
+        <MappingFragment StoreEntitySet="TblJobApplication">
+          <ScalarProperty Name="JobApplicationId" ColumnName="JobApplicationId" />
+          <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblJobPosts">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblJobPost">
+        <MappingFragment StoreEntitySet="TblJobPost">
+          <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+          <ScalarProperty Name="JobPosition" ColumnName="JobPosition" />
+          <ScalarProperty Name="JobDisctiption" ColumnName="JobDisctiption" />
+          <ScalarProperty Name="NoticePerionInDays" ColumnName="NoticePerionInDays" />
+          <ScalarProperty Name="NoticePeriodInMonth" ColumnName="NoticePeriodInMonth" />
+          <ScalarProperty Name="SaleryRs" ColumnName="SaleryRs" />
+          <ScalarProperty Name="SaleryDoller" ColumnName="SaleryDoller" />
+          <ScalarProperty Name="Exprience" ColumnName="Exprience" />
+          <ScalarProperty Name="PostionOpen" ColumnName="PostionOpen" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblJobSaveds">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblJobSaved">
+        <MappingFragment StoreEntitySet="TblJobSaved">
+          <ScalarProperty Name="JobSaveId" ColumnName="JobSaveId" />
+          <ScalarProperty Name="JobPostId" ColumnName="JobPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPositions">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblPosition">
+        <MappingFragment StoreEntitySet="TblPosition">
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProfileVieweds">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblProfileViewed">
+        <MappingFragment StoreEntitySet="TblProfileViewed">
+          <ScalarProperty Name="ProfileViewdId" ColumnName="ProfileViewdId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ViewedDate" ColumnName="ViewedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblStates">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblState">
+        <MappingFragment StoreEntitySet="TblState">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsers">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblUser">
+        <MappingFragment StoreEntitySet="TblUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="ProfilePicId" ColumnName="ProfilePicId" />
+          <ScalarProperty Name="ResumeId" ColumnName="ResumeId" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUserMessageReciveds">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblUserMessageRecived">
+        <MappingFragment StoreEntitySet="TblUserMessageRecived">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="IsApplyed" ColumnName="IsApplyed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUserMessageSends">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblUserMessageSend">
+        <MappingFragment StoreEntitySet="TblUserMessageSend">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MessageDiscription" ColumnName="MessageDiscription" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUserTypes">
+      <EntityTypeMapping TypeName="MyJobPortalModel.TblUserType">
+        <MappingFragment StoreEntitySet="TblUserType">
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

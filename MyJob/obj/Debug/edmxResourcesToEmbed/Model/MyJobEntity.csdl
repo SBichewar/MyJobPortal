@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyJobPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminMst">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EdgucationMst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sid" Type="Int32" />
+    <Property Name="CollageName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Enrollno" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Semester" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Edgucation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passyear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CPI" Type="Double" />
+    <Property Name="CGPA" Type="Double" />
+    <Property Name="Skill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SekerMst">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnrollNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Dob" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="Resume" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="MyJobPortalEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminMsts" EntityType="Self.AdminMst" />
+    <EntitySet Name="EdgucationMsts" EntityType="Self.EdgucationMst" />
+    <EntitySet Name="SekerMsts" EntityType="Self.SekerMst" />
+    <EntitySet Name="Countries" EntityType="MyJobPortalModel.Country" />
+    <EntitySet Name="CompanyMsts" EntityType="MyJobPortalModel.CompanyMst" />
+    <EntitySet Name="States" EntityType="MyJobPortalModel.State" />
+    <EntitySet Name="Talukas" EntityType="MyJobPortalModel.Taluka" />
+    <EntitySet Name="Dists" EntityType="MyJobPortalModel.Dist" />
+    <EntitySet Name="Empolyeements" EntityType="MyJobPortalModel.Empolyeement" />
+    <EntitySet Name="PostJobMsts" EntityType="MyJobPortalModel.PostJobMst" />
+  </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CompanyMst">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPersion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Uname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="IsEable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Taluka">
+    <Key>
+      <PropertyRef Name="TalukaId" />
+    </Key>
+    <Property Name="TalukaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TalukaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DistId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Dist">
+    <Key>
+      <PropertyRef Name="DistId" />
+    </Key>
+    <Property Name="DistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empolyeement">
+    <Key>
+      <PropertyRef Name="EmpoyementId" />
+    </Key>
+    <Property Name="EmpoyementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentCompany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AnualSaleryInLakh" Type="Int32" />
+    <Property Name="AnualSaleryInThousent" Type="Int32" />
+    <Property Name="WrokingFromYear" Type="Int32" />
+    <Property Name="WrokingFromMonath" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CompanyNumber" Type="Int32" />
+    <Property Name="CurrentLocationId" Type="Int32" />
+    <Property Name="NoticePeriod" Type="Int32" />
+    <Property Name="NoticePeriodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SkilId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PostJobMst">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cid" Type="Int32" />
+    <Property Name="JobCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RequireSkill" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ExprienceRequire" Type="Int32" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="PostDiscription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

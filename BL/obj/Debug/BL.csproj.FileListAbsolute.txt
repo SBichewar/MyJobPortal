@@ -1,0 +1,13 @@
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\BL.dll
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\BL.pdb
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\Common.dll
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\DAL.dll
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\EntityFramework.dll
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\Common.pdb
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\DAL.pdb
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\EntityFramework.xml
+D:\MyJob\MyJob\MyJob\BL\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.dll
+D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.pdb

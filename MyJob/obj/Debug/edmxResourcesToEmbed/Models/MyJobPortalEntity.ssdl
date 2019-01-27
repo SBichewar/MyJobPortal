@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyJobPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyJobPortal.dbo.AdminMst' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AdminMst">
+          <Property Name="Aid" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyJobPortal.dbo.CompanyMst' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CompanyMst">
+          <Property Name="Cid" Type="int" />
+          <Property Name="CName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPersion" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="500" />
+          <Property Name="Uname" Type="nvarchar" MaxLength="500" />
+          <Property Name="Website" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyJobPortal.dbo.EdgucationMst' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EdgucationMst">
+          <Property Name="Id" Type="int" />
+          <Property Name="Sid" Type="int" />
+          <Property Name="CollageName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Enrollno" Type="nvarchar" MaxLength="500" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="500" />
+          <Property Name="Edgucation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passyear" Type="varchar" MaxLength="50" />
+          <Property Name="CPI" Type="float" />
+          <Property Name="CGPA" Type="float" />
+          <Property Name="Skill" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExtraSkill" Type="nvarchar" MaxLength="50" />
+          <Property Name="Resume" Type="nvarchar(max)" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyJobPortal.dbo.PostJobMst' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PostJobMst">
+          <Property Name="JobId" Type="int" />
+          <Property Name="Cid" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="JobCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequireSkill" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyJobPortal.dbo.SekerMst' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SekerMst">
+          <Property Name="Sid" Type="int" />
+          <Property Name="EnrollNo" Type="nvarchar(max)" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" />
+          <Property Name="Pincode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Dob" Type="datetime" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>-->
+  <EntityContainer Name="MyJobPortalModelStoreContainer" />
+</Schema>
