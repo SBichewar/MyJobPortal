@@ -11,3 +11,16 @@ D:\MyJob\MyJob\MyJob\BL\bin\Debug\EntityFramework.SqlServer.xml
 D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.dll
 D:\MyJob\MyJob\MyJob\BL\obj\Debug\BL.pdb
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\BL.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\BL.pdb
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\Common.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\DAL.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\EntityFramework.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\Common.pdb
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\DAL.pdb
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\EntityFramework.xml
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\obj\Debug\BL.dll
+C:\Users\pgiri570\Source\Repos\MyJobPortal\BL\obj\Debug\BL.pdb
